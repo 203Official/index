@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>203official-花菜的主页</title>
+        <link rel="stylesheet" type="text/css" href="./css/index.css">
+    </head>
+    <body>
+        <!--整体置中-->
+        <div id="alldiv">
+            <h1 >花菜的主页</h1>
+            <!--顶部导航栏-->
+            <div class="drow" style="height:40px;width:1198px;box-shadow:1px 1px 2px 2px #999999;margin-bottom:10px;">
+                <div class="dcol" style="width:1000px;">
+                    <div class="topmenuo">
+                        <ul class="topmenuo1">
+                            <li class="topmenuo3">
+                                <a style="width:150px;" href="../index.html">&nbsp;首&nbsp;页&nbsp;</a>
+                            </li>
+                            <li class="topmenuo3">
+                                <a style="width:150px;" href="../news/news-index.html">&nbsp;新&nbsp;闻&nbsp;</a>
+                            </li>
+                            <li class="topmenuo3">
+                                <a style="width:150px;" onclick="displaymembersul()">&nbsp;成&nbsp;员&nbsp;</a>
+                                <ul id="topmenumembers" class="topmenuo2" style="display: none;">
+                                    <li>
+                                        <a href="./huacai.html">坩锅花菜</a>                                    
+                                    </li>
+                                    <li>
+                                        <a href="./mifan.html">米饭好好吃</a>
+                                    </li>
+                                    <li>
+                                        <a href="./gongzheng.html">弓正Anna</a>
+                                    </li>
+                                    <li>
+                                        <a href="./thehao.html">the浩</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="topmenuo3">
+                                <a style="width: 150px;">&nbsp;友&nbsp;链&nbsp;</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--点击事件-->
+            <script>
+                function displaymembersul(){
+                    var memberbutton = document.getElementById("topmenumembers")
+                    if(memberbutton.style.display=="none"){
+                        memberbutton.style.display="block";
+                    }
+                    else{
+                        memberbutton.style.display="none";
+                    }
+                }
+            </script>
+            <div class="drow">
+                <div style="width:100%;padding-top:5px;">
+                    
+                </div>
+            </div>
+            <!--底部信息-->
+            <table width="1200" height="60" cellspacing="0" cellpadding="0" border="0" align="center">
+                <tbody>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>
+            hello,world!
+        </p>
+    </body>
+</html>

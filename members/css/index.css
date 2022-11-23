@@ -1,0 +1,93 @@
+#alldiv {
+    opacity: 0.85;
+    background-color: #ffffff;
+    margin: auto;
+      margin-top: auto;
+      margin-right: auto;
+      margin-bottom: auto;
+      margin-left: auto;
+    width: 1200px;
+}
+
+body {
+    font-size: 13px;
+    color: #151515;
+    line-height: 20px;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a, a:visited {
+    text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-style: solid;
+      text-decoration-color: currentcolor;
+      text-decoration-thickness: auto;
+    color: #0000CC;
+}
+
+.drow {
+    margin: 0;
+      margin-bottom: 0px;
+    padding: 0;
+    display: block;
+    clear: both;
+}
+
+.dcol {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+}
+
+.topmenuo {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    clear: both;
+    background: #FFFFFF;
+}
+
+.topmenuo1 > li {
+    font-weight: bold;
+    position: relative;
+}
+
+.topmenuo2 {
+    position: absolute;
+    top: 40px;
+    left: -1px;
+    width: 150px;
+    z-index: 1000;
+    box-shadow: 1px 3px 2px 1px #999999;
+    display: none;
+}
+
+.topmenuo3 {
+    float: left;
+    border-right: 1px #EEEEEE solid;
+}
+
+.topmenuo3 a {
+    line-height: 40px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3399FF;
+    display: block;
+    text-decoration: none;
+      text-decoration-line: none;
+      text-decoration-style: solid;
+      text-decoration-color: currentcolor;
+      text-decoration-thickness: auto;
+}
