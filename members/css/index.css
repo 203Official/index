@@ -94,7 +94,7 @@ a, a:visited {
 
 
 .code-block {
-    background-color: #f2f2f2;
+    background-color: #111;
     border-radius: 5px;
     padding: 20px;
     position: relative;
@@ -126,13 +126,14 @@ a, a:visited {
   
   .code-block pre {
     margin: 0;
+    background-color: #000;
   }
   
   .code-block code {
     font-family: 'Courier New', monospace;
     font-size: 14px;
     line-height: 1.5;
-    color: #444;
+    color: rgb(255, 255, 255);
     overflow-x: auto;
   }
   
