@@ -2376,6 +2376,7 @@ delete Prism.languages.c['boolean'];
 	});
 
 	Prism.languages.insertBefore('cpp', 'keyword', {
+		'gzkeyword': /\b(?:break|case|catch|continue|default|do|else|finally|for|goto|if|return|NULL|setup|switch|throw|try|while)\b/,
 		'generic-function': {
 			pattern: /\b(?!operator\b)[a-z_]\w*\s*<(?:[^<>]|<[^<>]*>)*>(?=\s*\()/i,
 			inside: {
