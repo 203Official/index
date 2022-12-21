@@ -136,44 +136,82 @@ a, a:visited {
     color: rgb(255, 255, 255);
     overflow-x: auto;
   }
-  
+    
   .language-cpp {
-    color: #f34b7d;
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre;
   }
   
-  .language-cpp .keyword {
-    color: #f34b7d;
+  
+
+  
+
+  .keyword{
+    color: rgb(18, 77, 255);
     font-weight: bold;
   }
-  
-  .language-cpp .string {
-    color: #39b54a;
+
+  .gzkeyword{
+    color: rgb(255, 18, 141);
+    font-weight: bold;
+  }
+
+  .directive.keyword{
+    color: gray;
+  }
+
+
+
+  .class-name{
+    color: green;
   }
   
-  .language-cpp .number {
-    color: #6f42c1;
+ .function{
+    color:yellow;
+  }
+
+ .boolean{
+    color: #4444ff;
+  }
+
+  .string {
+    color: #ff7b00;
   }
   
+  .number {
+    color: yellowgreen;
+  }
+
   .language-cpp .operator {
-    color: #5a5a5a;
+    color: #7bbdff;
     font-weight: bold;
+  }
+
+  .language-hlsl .operator {
+    color: #7bbdff;
+    font-weight: bold;
+  }
+  
+  .punctuation {
+    color: #708090;
   }
   
   .language-cpp .preprocessor {
-    color: #f34b7d;
+    color: #008000;
+    font-weight: bold;
   }
   
-  .language-cpp .type {
-    color: #9b9b9b;
+  .comment {
+    color: gray;
+    font-style: italic;
   }
-  
-  .language-cpp .function {
-    color: #39b54a;
-  }
-  
+
   .language-cpp .identifier {
-    color: #000;
+    color: #000000;
   }
+  
   
 
   .parent {
