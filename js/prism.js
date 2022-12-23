@@ -8857,6 +8857,11 @@ Prism.languages.hlsl = Prism.languages.extend('c', {
 	'boolean': /\b(?:false|true)\b/
 });
 
+Prism.languages.insertBefore('hlsl', 'keyword', {
+	'gzkeyword': /\b(?:break|case|catch|continue|default|do|else|finally|for|goto|if|return|NULL|setup|switch|throw|try|while)\b/,
+});
+
+
 Prism.languages.hoon = {
 	'comment': {
 		pattern: /::.*/,
