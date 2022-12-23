@@ -67,7 +67,9 @@
 
         <div class="parent" >
             <div class="child">
-                <h5>给定一个m*m的矩阵<strong>A</strong>，定义一个结构体以实现矩阵，同时重载矩阵的乘法操作。注意有时需进行取模操作。</h5>
+                <h4>
+                    给定一个m*m的矩阵<strong>A</strong>，定义一个结构体以实现矩阵，同时重载矩阵的乘法操作。注意有时需进行取模操作。
+                </h4>
                 <br>
                 <div class="code-block">
                     <button class="copy-button">复制代码</button>
@@ -95,19 +97,22 @@ struct Matrix {
 };</code>
                     </pre>
                 </div>
-                <p style="text-align: center;">示例代码1</p>
+                <p style="text-align: center;">
+                    示例代码1
+                </p>
                 <br>
-                <h5>
-                    对于矩阵的快速幂操作，即在幂n很大的时候求A
-                    <sup>
-                        n
-                    </sup>
-                    ，前面已经重载了矩阵的乘法运算符，那么快速幂操作便和<br>
+                <h4>
+                    对于矩阵的快速幂操作，即在幂n很大的时候求
+                    A<sup>n</sup>
+                    ，前面已经重载了矩阵的乘法运算符，那么快速幂操作便和
+                    <br>
                     普通变量的快速幂操作极为相似。需注意初始化矩阵变量为单位矩阵。
-                </h5>
+                </h4>
                 <br>
                 <div class="code-block">
-                    <button class="copy-button">复制代码</button>
+                    <button class="copy-button">
+                        复制代码
+                    </button>
                     <pre>
                         <code class="language-cpp">
 Matrix fp(Matrix a,ll n) {
@@ -125,31 +130,67 @@ Matrix fp(Matrix a,ll n) {
                         </code>
                     </pre>
                 </div>
-                <p style="text-align: center;">示例代码2</p>
+                <p style="text-align: center;">
+                    示例代码2
+                </p>
                 <br>
                 <br>
-                <h1>矩阵在数列递推中的应用</h1>
-                <h3>如例题POJ3070：<a href="http://poj.org/problem?id=3070">3070 -- Fibonacci</a></h3>
-                <h5>题干中也详细给出了Fibonacci数列的矩阵递推式：</h5>
+                <h1>
+                    矩阵在数列递推中的应用
+                </h1>
+                <h3>
+                    如例题POJ3070：
+                    <a href="http://poj.org/problem?id=3070">
+                        3070 -- Fibonacci
+                    </a>
+                </h3>
+                <h4>
+                    题干中也详细给出了Fibonacci数列的矩阵递推式：
+                </h4>
                 <img src="http://gzblog.top/content/images/2022/06/gif.latex.gif">
-                <br><br>
-                <h5>称矩阵</h5>
+                <br>
+                <br>
+                <h4>
+                    称矩阵
+                </h4>
                 <img src="http://gzblog.top/content/images/2022/06/gif.latex2.gif">
-                <h5>为转移矩阵。</h5>
-                <h5>从递推式中即可看出，该式子能够将求数列的第n项转化为求<strong>转移矩阵的n次幂</strong>。</h5>
-                <h5>不仅是Fibonacci数列，任何有递推式的数列皆可尝试找到转移矩阵，从而将问题转化为矩阵的<br>幂，以降低时间复杂度。</h5>
-                <h5>举例，不做分析，有数列：</h5>
+                <h4>
+                    为转移矩阵。
+                </h4>
+                <h4>
+                    从递推式中即可看出，该式子能够将求数列的第n项转化为求
+                    <strong>转移矩阵的n次幂</strong>
+                    。
+                </h4>
+                <h4>
+                    不仅是Fibonacci数列，任何有递推式的数列皆可尝试找到转移矩阵，从而将问题转化为矩阵的
+                    幂，以降低时间复杂度。
+                </h4>
+                <h4>
+                    举例，不做分析，有数列：
+                </h4>
                 <img src="https://latex.codecogs.com/gif.latex?f%28x%29%3D%5Cleft%5C%7B%5Cbegin%7Bmatrix%7D%200%2Cx%3D0%5C%5C%201%2Cx%3D1%5C%5C%202%2Cx%3D2%5C%5C%203%2Cx%3D3%5C%5Cf%28x-1%29&amp;plus;f%28x-3%29%20%2Cx%3E3%20%5Cend%7Bmatrix%7D%5Cright." alt="少女折寿中">
-                <h5>对于其x&gt;3的情况，即递推式</h5>
+                <h4>
+                    对于其x&gt;3的情况，即递推式
+                </h4>
                 <img src="https://latex.codecogs.com/gif.latex?f%28x%29%3Df%28x-1%29&amp;plus;f%28x-3%29" alt="少女折寿中">
-                <h5>可写成以下矩阵转移式</h5>
+                <h4>
+                    可写成以下矩阵转移式
+                </h4>
                 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D%20f%28x-1%29%20%26f%28x-2%29%20%26f%28x-3%29%20%5Cend%7Bbmatrix%7D%20%5Cbegin%7Bbmatrix%7D%201%20%261%20%260%20%5C%5C%200%260%20%261%20%5C%5C%201%26%200%20%260%20%5Cend%7Bbmatrix%7D%3D%20%5Cbegin%7Bbmatrix%7D%20f%28x%29%26%20f%28x-1%29%20%26f%28x-2%29%20%5Cend%7Bbmatrix%7D" alt="少女折寿中">
-                <h5>且有矩阵通项式:</h5>
+                <h4>
+                    且有矩阵通项式:
+                </h4>
                 <img src="https://latex.codecogs.com/gif.latex?%5Cbegin%7Bbmatrix%7D%20f%28x%29%20%26f%28x-1%29%20%26f%28x-2%29%20%5Cend%7Bbmatrix%7D%3D%5Cbegin%7Bbmatrix%7D%203%20%262%20%261%5Cend%7Bbmatrix%7D%5Cbegin%7Bbmatrix%7D%201%20%261%20%260%20%5C%5C%200%26%200%20%261%20%5C%5C%201%26%200%20%260%20%5Cend%7Bbmatrix%7D%5E%7Bx-3%7D%2Cx%3E%3D4" alt="少女折寿中">
-                <br><br>
-                <h2 id="poj3070ac%E4%BB%A3%E7%A0%81">POJ3070AC代码</h2>
+                <br>
+                <br>
+                <h2 id="poj3070ac%E4%BB%A3%E7%A0%81">
+                    POJ3070AC代码
+                </h2>
                 <div class="code-block">
-                    <button class="copy-button">复制代码</button>
+                    <button class="copy-button">
+                        复制代码
+                    </button>
                     <pre>
                         <code class="language-cpp">
 #include &lt;iostream&gt;
@@ -221,33 +262,91 @@ int main() {
                         </code>
                     </pre>
                 </div>
-                <p style="text-align: center;">示例代码3</p>
-                <br><br>
-                <h3>例题HDU3117:<a href="https://acm.hdu.edu.cn/showproblem.php?pid=3117">Problem - 3117</a></h3>
-                <h5>本题中数列长度也到了10<sup>8</sup>的数量级，故考虑进行矩阵加速。</h5>
-                <h5>题中说明，对于结果位数大于8位的数，仅输出前四位与后四位。</h5>
-                <h5>稍打表可知，当n&gt;=40时，结果位数大于八位，故可在n&lt;40时打表输出，之后的采用矩阵加速求解</h5>
-                <h5>对于后四位，可在递推求数的过程中不断对10000进行取模，需注意这里要<strong>补齐前导零至四位</strong><br>(这里我WA了一次呜呜)</h5>
-                <h5>而对于前四位，似乎就没有那么容易求得了。</h5>
-                <h5>这里采用一些玄学的数学方法。</h5>
-                
-                <h4 style="text-align: center;">
-                    对于任何一个大数x,都可写成科学计数法，即&nbsp;x=a<sub>*</sub>10<sup>b</sup>&nbsp;,两边同取对数，
+                <p style="text-align: center;">
+                    示例代码3
+                </p>
+                <br>
+                <br>
+                <h3>
+                    例题HDU3117:
+                    <a href="https://acm.hdu.edu.cn/showproblem.php?pid=3117">
+                        Problem - 3117
+                    </a>
+                </h3>
+                <h4>
+                    本题中数列长度也到了
+                    10<sup>8</sup>
+                    的数量级，故考虑进行矩阵加速。
+                </h4>
+                <h4>
+                    题中说明，对于结果位数大于8位的数，仅输出前四位与后四位。
+                </h4>
+                <h4>
+                    稍打表可知，当n&gt;=40时，结果位数大于八位，故可在n&lt;40时打表输出，之后的采用矩阵加速求解
+                </h4>
+                <h4>
+                    对于后四位，可在递推求数的过程中不断对10000进行取模，需注意这里要
+                    <strong>补齐前导零至四位</strong>
                     <br>
-                    则有&nbsp;log<sub>10</sub>x=log<sub>10</sub>(a<sub>*</sub>10<sup>b</sup>)
+                    (这里我WA了一次呜呜)
+                </h4>
+                <h4>
+                    而对于前四位，似乎就没有那么容易求得了。
+                </h4>
+                <h4>
+                    这里采用一些玄学的数学方法。
+                </h4>
+                
+                <h3 style="text-align: center;">
+                    对于任何一个大数x,都可写成科学计数法，即&nbsp;
+                    x=a<sub>*</sub>10<sup>b</sup>&nbsp;
+                    ,两边同取对数，
+                    <br>
+                    则有&nbsp;
+                    log<sub>10</sub>x=log<sub>10</sub>(a<sub>*</sub>10<sup>b</sup>)
+                </h3>
+                <br>
+                <h4>
+                    举个具体的例子，即&nbsp;&nbsp;
+                    log<sub>10</sub>1234567
+                    =log<sub>10</sub>(1.234567<sub>*</sub>10<sup>6</sup>)
+                    =log<sub>10</sub>(1.234567)+6
+                </h4>
+                <h4>
+                    其中6可视作&nbsp;
+                    log<sub>10</sub>1234567
+                    的值的整数部分。可设
+                    log<sub>10</sub>1.234567=t
+                </h4>
+                <h4>
+                    则1.234567=
+                    10<sup>t</sup>
+                    对于1234567的前四位，即可表达为
+                    |10<sup>t+3</sup>|
+                    那么对于Fibonacci数列，有如下通项公式：
+                </h4>
+                <img src="https://latex.codecogs.com/gif.latex?F_n%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B5%7D%7D%5B%28%5Cfrac%7B1&amp;plus;%5Csqrt%7B5%7D%7D%7B2%7D%29%5E%7Bn%7D-%28%5Cfrac%7B1-%5Csqrt%7B5%7D%7D%7B2%7D%29%5E%7Bn%7D%5D" alt="少女折寿中">
+                <h4>
+                    稍作化简可以较为容易地表达出
+                    log<sub>10</sub>F<sub>n</sub>
+                    的值，在这里不做赘述,即：
+                </h4>
+                <img src="https://latex.codecogs.com/gif.latex?log_%7B10%7DF_n%3Dlog_%7B10%7D%5Cfrac%7B1%7D%7B%5Csqrt5%7D&amp;plus;n*log_%7B10%7D%5Cfrac%7B1&amp;plus;%5Csqrt5%7D%7B2%7D" alt="少女折寿中">
+                <h4>
+                    对于log<sub>10</sub>F<sub>n</sub>
+                    ,的值，减去其整数部分，剩余部分加3后作为10的幂求得结果，最后向下取整即可得到
+                    F<sub>n</sub>
+                    的前四位值。
                 </h4>
                 <br>
-                <h5>举个具体的例子，即&nbsp;&nbsp;log<sub>10</sub>1234567=log<sub>10</sub>(1.234567<sub>*</sub>10<sup>6</sup>)=log<sub>10</sub>(1.234567)+6</h5>
-                <h5>其中6可视作&nbsp;log<sub>10</sub>1234567的值的整数部分。可设log<sub>10</sub>1.234567=t</h5>
-                <h5>则1.234567=10<sup>t</sup>对于1234567的前四位，即可表达为|10<sup>t+3</sup>|那么对于Fibonacci数列，有如下通项公式：</h5>
-                <img src="https://latex.codecogs.com/gif.latex?F_n%3D%5Cfrac%7B1%7D%7B%5Csqrt%7B5%7D%7D%5B%28%5Cfrac%7B1&amp;plus;%5Csqrt%7B5%7D%7D%7B2%7D%29%5E%7Bn%7D-%28%5Cfrac%7B1-%5Csqrt%7B5%7D%7D%7B2%7D%29%5E%7Bn%7D%5D" alt="少女折寿中">
-                <h5>稍作化简可以较为容易地表达出log<sub>10</sub>F<sub>n</sub>的值，在这里不做赘述,即：</h5>
-                <img src="https://latex.codecogs.com/gif.latex?log_%7B10%7DF_n%3Dlog_%7B10%7D%5Cfrac%7B1%7D%7B%5Csqrt5%7D&amp;plus;n*log_%7B10%7D%5Cfrac%7B1&amp;plus;%5Csqrt5%7D%7B2%7D" alt="少女折寿中">
-                <h5>对于log<sub>10</sub>F<sub>n</sub>,的值，减去其整数部分，剩余部分加3后作为10的幂求得结果，最后向下取整即可得到F<sub>n</sub>的前四位值。</h5>
-                <br><br>
-                <h4><strong>直接贴代码</strong></h4>
+                <br>
+                <h2>
+                    <strong>直接贴代码</strong>
+                </h2>
                 <div class="code-block">
-                    <button class="copy-button">复制代码</button>
+                    <button class="copy-button">
+                        复制代码
+                    </button>
                     <pre>
                         <code class="language-cpp">
 int head(ll n){
@@ -259,10 +358,16 @@ int head(ll n){
                         </code>
                     </pre>
                 </div>
-                <p style="text-align: center;">示例代码4</p>
-                <h5>那么到这里为止，有关本题的相关要点都呈现的差不多了</h5>
+                <p style="text-align: center;">
+                    示例代码4
+                </p>
+                <h4>
+                    那么到这里为止，有关本题的相关要点都呈现的差不多了
+                </h4>
                 <br>
-                <h3>HDU3117AC代码</h3>
+                <h3>
+                    HDU3117AC代码
+                </h3>
                 <div class="code-block">
                     <button class="copy-button">复制代码</button>
                     <pre>
@@ -346,7 +451,9 @@ int main() {
                         </code>
                     </pre>
                 </div>
-                <p style="text-align: center;">示例代码5</p>
+                <p style="text-align: center;">
+                    示例代码5
+                </p>
 
             </div>
         </div>
