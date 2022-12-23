@@ -1,0 +1,292 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>203official-半兰伯特光照模型</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../css/fontAwesome.css">
+        <link rel="stylesheet" href="../../css/tooplate-style.css">
+        <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+        <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        <script src="https://unpkg.com/h5c3"></script>
+        <script src="../../js/prism.js"></script>
+        
+    </head>
+    <body>
+        <section class="first-gallery-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="text-content">
+                  <h2>半兰伯特光照模型介绍</h2>
+                  <div class="line-dec"></div>
+                  <span>弓正</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <section class="send-to-home">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="back-to-home">
+                  <span>本文是学习了《unity shader入门精要》后的自我总结</span>                  
+                  <div class="filter-categories">
+                    <ul class="project-filter">
+                      <li class="primary-button" >
+                        <a href="../../index.html">返回主页</a>
+                      </li>
+                      <li class="primary-button" >
+                        <a href="../../news/news.html">查看新闻</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+        <div class="parent" >
+            <div class="child">
+              <h3>
+                半兰伯特光照模型（Half-Lambert lighting model）是一种在计算机图形学中常用的光照模型。
+                <br>
+                它是在兰伯特光照模型的基础上发展而来的，用于模拟光照在物体表面的效果。
+              </h3>
+              <h3>
+                兰伯特光照模型由德国数学家和物理学家 Johann Heinrich Lambert 于1760年提出，                
+                用以描述光照在物体表面的效果。
+                <br>              
+                该模型规定，光照在物体表面的强度与物体的表面法线的夹角成正比。
+                也就是符合Lambert定律。
+              </h3>              
+              <h5 style="font-style:italic">
+                注意，此处的Lambert定律并不是常用于分析化学的Beer-Lambert吸收定律（A=ε×l×c）
+                <br>
+                而是描述光在介质传播的Lambert反射定律（I = kI0cosθincosθout）
+              </h5>
+              <h3>
+                到了20世纪60年代，计算机图形学的发展使得人们开始使用计算机来模拟光照效果。
+                <br>
+                在这个过程中，人们开始使用半兰伯特光照模型来描述光照在物体表面的效果。
+                主要的改动在于，光照在物体表面的强度被视为兰伯特光照模型的一半。
+                <br>
+                这样的操作可以有效弥补兰伯特光照模型中暗面没有明暗变化的缺点。
+              </h3>
+              <h3>
+                其数学表达式为：
+              </h3>
+              <h3 style="text-align: center;color: palevioletred;">
+                I = kI0(N·L)
+              </h3>
+              <h4>
+                其中，I是反射的光强度，I0是入射的光强度，N是物体的表面法线，L是光的方向向量，k是一个常数。
+              </h4>
+              <h3>
+                半兰伯特光照模型应用广泛。但是由于它假设光的方向是平行的，因此，目前主要
+                用于模拟平面光照效果。如果需要模拟非平面光照效果，则需要使用更复杂的光照模型。                
+                <br>
+                而它的广泛应用则得益于其特点——简单且容易实现（并且得到的效果还比较接近现实）。                
+              </h3>
+              <h3>
+                半兰伯特光照模型的提出具有重要意义，因为它使得计算机能够更准确地模拟光照效果。
+                这对计算机图形学的发展具有重要影响，并为计算机图形学应用的广泛发展奠定了基础。
+                <br>
+                不过尽管早在60年代就已经提出了模型，它第一次被运用到游戏中却是在由Valve Corporation
+                于1998年发布的第一人称射击游戏《Half-Life》里。
+              </h3>
+              <h4>
+                <br>
+                接下来给出一段手搓半兰伯特的着色器代码（hlsl语言）：
+              </h4>
+              <div class="code-block">
+                <button class="copy-button">
+                  复制代码
+                </button>
+                <pre>
+                  <code class="language-hlsl">
+Shader "Diffuse Half-Lambert"{
+    Properties{
+        _Diffuse("Diffuse", Color) = (1, 1, 1, 1)
+    }
+
+    SubShader{
+        Pass{
+            Tags { "LightMode" = "ForwardBase"}
+
+            CGPROGRAM
+                #pragma vertex vert
+                #pragma fragment frag
+                #include "Lighting.cginc"
+
+                fixed4 _Diffuse;
+
+                struct a2v {
+                    float4 vertex : POSITION;
+                    float3 normal : NORMAL;
+                };
+
+                struct v2f {
+                    float4 pos : SV_POSITION;
+                    float3 worldNormal : TEXCOORD0;
+                };
+
+                v2f vert(a2v v) {
+                    v2f o;
+                    o.pos = UnityObjectToClipPos(v.vertex);
+                    o.worldNormal = normalize(mul(v.normal, (float3x3)unity_WorldToObject));
+                    return o;
+                }
+
+                fixed4 frag(v2f i) : SV_Target{
+                    fixed3 ambient = UNITY_LIGHTMODEL_AMBIENT.xyz;
+
+                    fixed3 worldNormal = normalize(i.worldNormal);
+                    fixed3 worldLightDir = normalize(_WorldSpaceLightPos0.xyz);
+
+                    //计算漫反射光照的时候用halfLambert替换saturate
+                    fixed halfLambert = dot(worldNormal, worldLightDir) * 0.5 + 0.5;
+                    fixed3 diffuse = _LightColor0.rgb * _Diffuse.rgb * halfLambert;
+
+                    fixed3 color = ambient + diffuse;
+                    return fixed4(color, 1.0);
+                }
+
+            ENDCG
+        }
+    }
+
+    Fallback "Diffuse"
+}
+                  </code>
+                </pre>
+              </div>
+              <p style="text-align: center;">
+                手搓Half-Lambert
+              </p>
+              <br>
+              <h4>
+                上面是书中为实现了一个最基础的模型示例而写的shader。
+                <br>
+                在实际的使用中（较新版本的unity编辑器），推荐使用如下的代码：
+              </h4>
+              <div class="code-block">
+                <button class="copy-button">
+                  复制代码
+                </button>
+                <pre>
+                  <code class="language-hlsl">
+Shader "Custom/HalfLambert" {
+    Properties {
+        _Color("Color", Color) = (1,1,1,1)
+        _MainTex("Albedo (RGB)", 2D) = "white" {}
+        _Metallic("Metallic", Range(0,1)) = 0.0
+        _Smoothness("Smoothness", Range(0,1)) = 0.5
+    }
+
+    SubShader {
+        Tags { "RenderType"="Opaque" }
+        LOD 100
+        
+        CGPROGRAM
+            //基于物理的标准照明模型，并启用所有光类型的阴影
+            #pragma surface surf Standard fullforwardshadows          
+            //使用shader model 3.0 target，获得更好看的照明效果
+            #pragma target 3.0
+          
+            sampler2D _MainTex;
+            fixed4 _Color;
+            float _Metallic;
+            float _Smoothness;
+          
+            struct Input {
+                float2 uv_MainTex;
+            };
+          
+            //为此着色器添加实例化支持。需要在使用着色器的材质上选中“启用实例化”
+            //有关实例化的更多信息，请参阅https://docs.unity3d.com/Manual/GPUInstancing.html
+            //#pragma instancing_options assumeuniformscaling
+            UNITY_INSTANCING_BUFFER_START(Props)
+            //在此处放置更多实例
+            UNITY_INSTANCING_BUFFER_END(Props)
+          
+            void surf (Input IN, inout SurfaceOutputStandard o) {
+                // Albedo comes from a texture tinted by color
+                fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+                o.Albedo = c.rgb;
+                // Metallic and smoothness come from slider variables
+                o.Metallic = _Metallic;
+                o.Smoothness = _Smoothness;
+                // Half-Lambert lighting model
+                o.Albedo *= 0.5 + 0.5 * dot(o.Normal,_WorldSpaceLightPos0.xyz);
+            }
+        ENDCG
+    }
+    
+    FallBack "Diffuse"
+}    
+                  </code>
+                </pre>
+              </div>
+              <p style="text-align: center;">
+                懒人专用
+              </p>
+              <h3>
+                该shader更加成熟，并且使用了一系列unity提供的函数，能够使我们只需要写
+                Half-Lambert部分的内容而无需考虑其他的部分。
+              </h3>
+            </div>
+        </div>
+          
+
+        
+
+        
+       
+
+        <footer>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul>
+                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                </ul>
+                <p>Copyright &copy; 2022 203Official</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="../../js/vendor/bootstrap.min.js"></script>
+
+        <script src="../../js/plugins.js"></script>
+        <script src="../../js/main.js"></script>
+
+    </body>
+</html>
