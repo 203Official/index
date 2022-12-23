@@ -4,7 +4,7 @@
 this will be the official website of 203
 
  
-#### 将会发布以下内容：
+#### 将会发布以下内容✏：
 
 the infos will include:
 - 📰学校与寝室的新闻
